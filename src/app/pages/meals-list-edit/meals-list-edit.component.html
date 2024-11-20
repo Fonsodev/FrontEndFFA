@@ -1,0 +1,95 @@
+<section class="contenedor form-container">
+    <h1 class="text-form"> Actualizar Receta </h1>
+    <form [formGroup]="formData" (ngSubmit)="handleSubmit()">
+    <label for="name"> Receta</label>
+    <input type="text" placeholder="name" formControlName="name" id="name" />
+    <div class="error">
+    @if( formData.get( 'name' )?.invalid && ( formData.get( 'name' )?.dirty ||
+    formData.get( 'name' )?.touched )) { @if ( formData.get( 'name'
+    )?.errors?.[ 'required' ] ) {
+    <small>El campo 'name' es obligatorio</small>
+    } }
+    </div>
+
+    <label for="imagen">* Imagen</label>
+    <input type="text" placeholder="imagen" id="imagen" formControlName="image"/>
+    <div class="error">
+    @if( formData.get( 'imagen' )?.invalid && ( formData.get( 'imagen'
+    )?.dirty || formData.get( 'imagen' )?.touched )) { @if ( formData.get(
+    'imagen' )?.errors?.[ 'required' ] ) {
+    <small>El campo 'image' es obligatorio</small>
+    } }
+    </div>
+
+    <label for="ingredients">* Ingredientes</label>
+    <input type="text" placeholder="ingredients" id="ingredients" formControlName="ingredients"/>
+    <div class="error">
+    @if( formData.get( 'ingredients' )?.invalid && ( formData.get(
+    'ingredients' )?.dirty || formData.get( 'ingredients' )?.touched )) { @if
+    ( formData.get( 'ingredients' )?.errors?.[ 'required' ] ) {
+    <small>El campo 'ingredients' es obligatorio</small>
+    } }
+    </div>
+
+    <label for="instructions">* Instrucciones</label>
+    <input type="text" placeholder="instructions" id="instructions" formControlName="instructions"/>
+    <div class="error">
+    @if( formData.get( 'instructions' )?.invalid && ( formData.get(
+    'instructions' )?.dirty || formData.get( 'instructions' )?.touched )) {
+    @if ( formData.get( 'instructions' )?.errors?.[ 'required' ] ) {
+    <small>El campo 'instrucciones' es obligatorio</small>
+    } }
+    </div>
+
+    <label for="calories">* Calorías en Gramos</label>
+    <input type="number" min="0" placeholder="calories" id="calories" formControlName="calories"/>
+    <div class="error">
+    @if( formData.get( 'calories' )?.invalid && ( formData.get( 'calories'
+    )?.dirty || formData.get( 'calories' )?.touched )) { @if ( formData.get(
+    'calories' )?.errors?.[ 'required' ] ) {
+    <small>El campo 'Calorías' es obligatorio</small>
+    } }
+    </div>
+    <label for="proteins">* Proteínas en Gramos</label>
+    <input type="number" min="0" placeholder="proteins" id="proteins" formControlName="proteins"/>
+    <div class="error">
+    @if( formData.get( 'proteins' )?.invalid && ( formData.get( 'proteins'
+    )?.dirty || formData.get( 'proteins' )?.touched )) { @if ( formData.get(
+    'proteins' )?.errors?.[ 'required' ] ) {
+    <small>El campo 'Proteínas' es obligatorio</small>
+    } }
+    </div>
+    <label for="fats">* Grasas en Gramos</label>
+    <input type="number" min="0" placeholder="fats" id="fats" formControlName="fats"/>
+    <div class="error">
+    @if( formData.get( 'fats' )?.invalid && ( formData.get( 'fats' )?.dirty ||
+    formData.get( 'fats' )?.touched )) { @if ( formData.get( 'fats'
+    )?.errors?.[ 'required' ] ) {
+    <small>El campo 'Proteínas' es obligatorio</small>
+    } }
+    </div>
+    <label for="carbohydrates">* Carbohidratos en Gramos</label>
+    <input type="number" min="0" placeholder="carbohydrates" id="carbohydrates" formControlName="carbohydrates"/>
+    <div class="error">
+    @if( formData.get( 'carbohydrates' )?.invalid && ( formData.get(
+    'carbohydrates' )?.dirty || formData.get( 'carbohydrates' )?.touched )) {
+    @if ( formData.get( 'carbohydrates' )?.errors?.[ 'required' ] ) {
+    <small>El campo 'carbohydrates' es obligatorio</small>
+    } }
+    </div>
+    <label for="fiber">* Fibra en Gramos</label>
+    <input type="number" min="0" placeholder="fiber" id="fiber" formControlName="fiber"/>
+    <div class="error">
+    @if( formData.get( 'fiber' )?.invalid && ( formData.get( 'fiber' )?.dirty
+    || formData.get( 'fiber' )?.touched )) { @if ( formData.get( 'fiber'
+    )?.errors?.[ 'required' ] ) {
+    <small>El campo 'fiber' es obligatorio</small>
+    } }
+    </div>
+
+    <p>*Campos obligatorios</p>
+    <br />
+    <button type="submit" [disabled]="formData.invalid">Actualizar</button>
+    </form>
+</section>
+

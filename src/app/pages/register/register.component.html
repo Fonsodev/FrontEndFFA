@@ -1,0 +1,123 @@
+<section class="contenedor form-container">
+  <h1 class="text-form">Formulario de Registro</h1>
+  <form
+    [formGroup]="formData"
+    (ngSubmit)="handleSubmit()"
+  >
+
+        <label for="name">* Nombre</label>
+        <input type="text" placeholder="Nombre" formControlName="name" id="name">
+        <div class="error">
+          @if(  formData.get( 'name' )?.invalid && ( formData.get( 'name' )?.dirty || formData.get( 'name' )?.touched )) {
+            @if ( formData.get( 'name' )?.errors?.[ 'required' ] ) {
+              <small>El campo 'Nombre' es obligatorio</small>
+            }
+          }
+        </div>
+
+        <label for="lastname">* Apellido</label>
+        <input type="text" placeholder="Apellido" id="lastname" formControlName="lastname">
+        <div class="error">
+          @if(  formData.get( 'lastname' )?.invalid && ( formData.get( 'lastname' )?.dirty || formData.get( 'lastname' )?.touched )) {
+            @if ( formData.get( 'lastname' )?.errors?.[ 'required' ] ) {
+              <small>El campo 'Apellido' es obligatorio</small>
+            }
+          }
+        </div>
+
+        <label for="age">* Edad</label>
+        <input type="number" min="0" placeholder="Edad" id="age" formControlName="age">
+        <div class="error">
+          @if(  formData.get( 'age' )?.invalid && ( formData.get( 'age' )?.dirty || formData.get( 'age' )?.touched )) {
+            @if ( formData.get( 'age' )?.errors?.[ 'required' ] ) {
+              <small>El campo 'Edad' es obligatorio</small>
+            }
+          }
+        </div>
+
+        <label for="gender">* Sexo</label>
+        <select id="gender" formControlName="gender">
+            <option value="femenino">Femenino</option>
+            <option value="masculino">Masculino</option>
+            <option value="masculino">Otro</option>
+        </select>
+        <div class="error">
+          @if(  formData.get( 'gender' )?.invalid && ( formData.get( 'gender' )?.dirty || formData.get( 'gender' )?.touched )) {
+            @if ( formData.get( 'gender' )?.errors?.[ 'required' ] ) {
+              <small>El campo 'Sexo' es obligatorio</small>
+            }
+          }
+        </div>
+
+        <label for="weight">* Peso en Kg</label>
+        <input type="number" min="0" name="weight" value="0" formControlName="weight" id="weight">
+        <div class="error">
+          @if(  formData.get( 'weight' )?.invalid && ( formData.get( 'weight' )?.dirty || formData.get( 'weight' )?.touched )) {
+            @if ( formData.get( 'weight' )?.errors?.[ 'required' ] ) {
+              <small>El campo 'Peso' es obligatorio</small>
+            }
+          }
+        </div>
+
+        <label for="height">* Estatura en CM</label>
+        <input type="number" value="0" formControlName="height" id="height">
+        <div class="error">
+          @if(  formData.get( 'height' )?.invalid && ( formData.get( 'height' )?.dirty || formData.get( 'height' )?.touched )) {
+            @if ( formData.get( 'height' )?.errors?.[ 'required' ] ) {
+              <small>El campo 'Estatura' es obligatorio</small>
+            }
+          }
+        </div>
+
+        <label for="mobile">* Celular</label>
+        <input type="tel" name="mobile" id="mobile" formControlName="mobile">
+        <div class="error">
+          @if(  formData.get( 'mobile' )?.invalid && ( formData.get( 'mobile' )?.dirty || formData.get( 'mobile' )?.touched )) {
+            @if ( formData.get( 'mobile' )?.errors?.[ 'required' ] ) {
+              <small>El campo 'Celular' es obligatorio</small>
+            }
+          }
+        </div>
+
+        <label for="username">* Email</label>
+        <input type="email" name="username" formControlName="username" id="username">
+        <div class="error">
+          @if(  formData.get( 'username' )?.invalid && ( formData.get( 'username' )?.dirty || formData.get( 'username' )?.touched )) {
+            @if ( formData.get( 'username' )?.errors?.[ 'required' ] ) {
+              <small>El campo 'Email' es obligatorio</small>
+            }
+              <!-- Valida la regla: Validators.email -->
+            @if( formData.get( 'username' )?.errors?.[ 'email' ] ) {
+              <small>Email con formato no valido</small>
+            }
+          }
+        </div>
+
+        <label for="password">* Crear Contraseña</label>
+        <input type="password" id="password" id="password" formControlName="password">
+        <div class="error">
+          <!-- Validar los estados del campo input >> name -->
+          @if( formData.get( 'password' )?.invalid && ( formData.get( 'password' )?.dirty || formData.get( 'password' )?.touched ) ) {
+              <!-- Valida la regla: Validators.required -->
+              @if( formData.get( 'password' )?.errors?.[ 'required' ] ) {
+                  <small>El campo 'Contraseña' es obligatorio</small>
+              }
+              <!-- Valida la regla: Validators.min -->
+              @if( formData.get( 'password' )?.errors?.[ 'minlength' ] ) {
+                  <small>El password debe tener minimo 8 caracteres</small>
+              }
+              <!-- Valida la regla: Validators.max -->
+              @if( formData.get( 'password' )?.errors?.[ 'maxlength' ] ) {
+                  <small>El password debe tener maximo 20 caracteres</small>
+              }
+          }
+      </div>
+      <div class="field">
+        <p>{{message}}</p>
+      </div>
+      <p class="required-field">*Campos obligatorios</p>
+      <br>
+        <button type="submit" [disabled]="formData.invalid">Enviar</button>
+
+  </form>
+</section>

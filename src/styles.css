@@ -1,0 +1,774 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root{
+  /**Colors*/
+  --black--: #000000;
+  --limerick--: #A4C400;
+  --Blue-Bolt--: #00B7FF;
+  --white--: #FFFFFF;
+  --Green-Munsell--: #00A878;
+  --Eerie-Black--: #0E1725;
+  --Dark-Gunmetal--: #1D2533;;
+
+  /* valor estandar de las fuentes*/
+  --overall-font-size: 62.5%;
+
+  --height-header: 8rem;
+  --height-footer: 8rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--Eerie-Black--);
+  font-size: var(--overall-font-size);
+}
+
+body {
+  font-family: "Abril Fatface", serif;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+h1 {
+  color: var(--limerick--);
+  font-family:"Roboto";
+  font-weight: 900;
+  font-size: 9rem;
+  line-height: 9rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-family: 'Roboto';
+  color: var(--limerick--);
+  padding: 1rem 0;
+}
+
+h4 {
+  font-size: 1.8rem;
+  font-family: 'Roboto';
+  font-weight: 400;
+  color: var(--limerick--);
+}
+
+p {
+  color: var(--white--);
+  font-size: 2rem;
+  font-family: roboto, san sans-serif;
+  font-weight: 200;
+  padding: 1.2rem 0;
+  /* height: 11rem; */
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+label{
+  color: var(--white--);
+}
+.contenedor {
+  max-width: 94%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/** Menu-Header */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+  height: var( --height-header );
+}
+.contenedor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page {
+  max-height: calc(100vh - var(--height-header) - var(--height-footer));
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-content {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+.main-nav {
+  list-style: none;
+  display: flex;
+  font-size: 1.8rem;
+  margin-left: 7rem;
+}
+
+img.img-thumbnail {
+  max-width: 8rem;
+  max-height: 8rem;
+  width: 100%;
+  height: 100%;
+  border-radius: .8rem;
+}
+
+.anchor-link {
+  text-decoration: none;
+  color: var(--limerick--);
+}
+
+.inscribirse-link {
+  text-decoration: none;
+  background: linear-gradient(70deg, #A4C400, #00A878);
+  color: var(--white--);
+  border: .2rem solid #A4C400;
+  padding: .8rem 3.7rem;
+  border-radius: 2rem;
+}
+
+.login-link {
+  align-items: center;
+  border-radius: 2rem;
+  border: .2rem solid #A4C400;
+  color: var(--limerick--);
+  cursor: pointer;
+  display: flex;
+  font-size: 1.6rem;
+  justify-content: center;
+  padding: .8rem 1.8rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.acceso-link {
+  text-decoration: none;
+
+  color: var(--limerick--);
+  border: .2rem solid #A4C400;
+  padding: 1.2rem 3.7rem;
+  border-radius: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.6rem;
+  order: 3;
+  align-items: center;
+}
+ul.menu {
+  position: relative;
+  top: 14.6rem;
+  right: 0;
+  width: 111%;
+  font-size: 1.6rem;
+  padding: 2rem 0;
+  list-style: none;
+  display: none;
+}
+/* Ocultar el checkbox por defecto */
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+
+.hamburger-icon {
+  display: none;
+}
+
+
+/** Main Banner Section */
+
+
+
+.abril-fatface-regular {
+  font-family: "Abril Fatface", serif;
+}
+
+.container {
+  padding: 13rem;
+}
+
+section.main-banner-section {
+  background-size: cover;
+  background-position: right 0;
+}
+
+.main-banner {
+  background: linear-gradient(180deg, rgba(14, 23, 37, 1) 15%, rgba(29, 37, 51, 1) 100%);
+  height: 42vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 0 0 2.5rem 2.5rem;
+}
+
+.left-banner {
+  width: 40%;
+}
+
+p.main__banner-paragraph {
+  color: var(--white--);
+  font-size: 2rem;
+  font-family: roboto, san sans-serif;
+  font-weight: 200;
+  /* width: 60%; */
+  padding: 1.2rem 0;
+  height: 11rem;
+}
+
+a.main__banner-button {
+  background-image: linear-gradient(to right, var(--limerick--) 0%, var(--Green-Munsell--) 50%, var(--limerick--) 100%);
+  padding: .8rem .8rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-family: 'Roboto';
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 2rem #000;
+  border-radius: 2rem;
+  display: block;
+  border: .25rem solid #a4c400;
+  width: 20rem;
+}
+
+a.main__banner-button::before {
+  content: url(/images/pointer-icon.svg);
+  margin-right: 1rem;
+}
+
+a.main__banner-button:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+img.home-icon {
+  display: block;
+}
+
+/** Excercises Section */
+
+.exercises {
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 82%;
+}
+
+.exercises-content {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+a.exercises-button {
+  background-image: linear-gradient(to right, var(--white--) 0%, #dfdee4 50%, var(--white--) 100%);
+  background: linear-gradient(70deg, #A4C4, #00A878);
+  margin: 1rem 1rem 1rem 0;
+  padding: .8rem 3.7rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-family: 'Roboto';
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: var(--white--);
+  border-radius: 2rem;
+  display: block;
+  border: .2rem solid #a4c400;
+  width: 20rem;
+}
+
+a.exercises-button::before {
+  content: url(/images/exercises-icon.svg);
+  margin-right: 1rem;
+}
+
+a.exercises-button:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #a4c400;
+  text-decoration: none;
+
+}
+
+/** Meals Section */
+
+section.meals-section {
+  background-image: url(/images/meals-background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.meals {
+  height: 44rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 80%;
+}
+
+.meals-content {
+  flex-basis: 40%;
+}
+
+img.meals-img {
+  display: none;
+}
+
+a.meals-button {
+  background-image: linear-gradient(to right, var(--white--) 0%, #dfdee4 50%, var(--white--) 100%);
+  background: linear-gradient(70deg, #A4C4, #00A878);
+  margin: 1rem 1rem 1rem 0;
+  padding: .8rem 3.7rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-family: 'Roboto';
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: var(--white--);
+  border-radius: 2rem;
+  display: block;
+  border: .2rem solid #a4c400;
+  width: 20rem;
+}
+a.meals-button::before {
+  content: url(/images/meals-icon-button.svg);
+  margin-right: 1rem;
+}
+
+a.meals-button:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #a4c400;
+  text-decoration: none;
+}
+a.meals-button,
+a.exercises-button,
+a.main__banner-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*main-formulario*/
+.baner_img {
+  width: 100%;
+}
+.text-form {
+  color: var(--limerick--);
+  font-size: 3rem;
+  font-family: "Abril Fatface", serif;
+  padding-bottom: 3rem;
+}
+.text-form2 {
+  margin-bottom: 3.5rem;
+  color: var(--white--);
+  font-family: "Roboto", sans-serif;
+}
+.main-banner {
+  width: 80%;
+}
+.form-container {
+  width: 30%;
+  padding: 10rem 0;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.error {
+  height: 3rem;
+  font-size: 1.5rem;
+  color: red;
+  font-style: italic;
+}
+label {
+  margin-bottom: .5rem;
+  font-weight: bold;
+  font-size: 1.4rem;
+  align-self: baseline;
+}
+
+input, select {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  font-size: 1.4rem;
+  border: .1rem solid #ccc;
+  border-radius: .5rem;
+}
+.required-field{
+  color: var(--white--);
+}
+button {
+  padding: 1rem;
+  border-radius: 2rem;
+  margin: 0;
+  font-size: 1.6rem;
+  background: linear-gradient(70deg, #A4C400, #00A878);
+  color: var(--white--);
+  border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+/** Meals Banner Section */
+
+section.meals-banner-section {
+  background-image: url(/images/meals-banner.jpg);
+  background-size: cover;
+}
+
+
+.meals-banner {
+  height: 42.4rem;
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+h1.meals-title {
+  flex-basis: 50%;
+}
+
+/** Meals Days Section */
+
+.meals-days-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+ul.meals-days {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  list-style: none;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.day-item .meals-button {
+  margin: 1rem auto;
+}
+
+img.img-day {
+  border: .3rem solid var(--limerick--);
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+h2.day {
+  color: var(--white--);
+  padding: .5rem 0;
+}
+
+/** Exercises */
+
+/** Exercises Banner Section */
+
+section.exercises-banner-section {
+  background-image: url(/images/exercises-banner.jpg);
+  background-size: cover;
+}
+
+.exercises-banner {
+  height: 42.4rem;
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+h1.exercises-title {
+  flex-basis: 50%;
+}
+
+/** Exercises routine Section */
+
+.exercises-routine-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+ul.exercises-routine {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  list-style: none;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.exercise-item .exercises-button {
+  margin: 1rem auto;
+}
+
+img.img-day {
+  border: .3rem solid var(--limerick--);
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.siguenos {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.container-social-media {
+  margin: auto;
+  position: fixed;
+  right: 0;
+  top: 33rem;
+  z-index: auto;
+}
+
+ul.social-media {
+  display: flex;
+  float: right;
+  list-style: none; /* Remove bullet points */
+  margin: 0;        /* Remove default margin */
+  padding: 0;       /* Remove default padding */
+  right: 0;         /* Align to the right edge of the container */
+  text-align: center;
+}
+
+li.social-item {
+  padding: .5rem;
+}
+
+/**Formulario y acceso*/
+
+
+@media ( max-width: 1400px ) {}
+@media ( max-width: 1200px ) {
+    ul.main-nav {
+        display: none;
+    }
+}
+@media ( max-width: 992px ) {
+    p.main__banner-paragraph {
+        width: 70%;
+    }
+}
+@media ( max-width: 768px ) {
+
+    .hamburger-icon {
+      width: 60%;
+    }
+
+    .contenedor-header {
+        max-width: 90%;
+        justify-content: space-between;
+    }
+    .buttons {
+        display: none;
+    }
+    .hamburger-icon {
+        display: block;
+        height: 4rem;
+    }
+    .menu-icon {
+        display: block;
+    }
+    label.menu-icon {
+        position: absolute;
+        top: 38px;
+        right: 20px;
+    }
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Mostrar el menú cuando el checkbox está marcado */
+    #menu-toggle:checked + .menu{
+        display: flex;
+    }
+
+    .menu li a,
+    .menu li span {
+        padding: 1rem 3rem;
+        border-bottom: 1px solid #f4f4f4;
+        display: block;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    /* span {
+      padding: 10rem;
+    } */
+
+    section.main-banner-section {
+        background-position: -18rem 0;
+    }
+    .main-banner {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+    .left-banner {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+    .right-banner {
+      width: 100%;
+    }
+    img.imgBannerHome {
+      width: 100%;
+      padding-top: 2rem;
+    }
+    h1 {
+      font-size: 5rem;
+      text-shadow: 0 0 1rem #000;
+      line-height: 5rem;
+      text-align: center;
+
+    }
+    p.main__banner-paragraph {
+        width: 90%;
+        font-size: 2rem;
+        text-align: center;
+    }
+    .logo-container img {
+        height: 5rem;
+    }
+    a.main__banner-button {
+        padding: .8rem 1rem;
+        font-size: 1.7rem;
+        border-radius: 1.9rem;
+        width: 20rem;
+    }
+    .exercises {
+        flex-direction: column-reverse;
+        width: 90%;
+    }
+    .exercises-content {
+        margin-bottom: 3rem;
+        flex-direction: column;
+    }
+    a.exercises-button {
+        padding: 1rem 1rem;
+        font-size: 1.7rem;
+        border-radius: 1.7rem;
+        width: 14rem;
+    }
+    section.meals-section {
+        background-color: #eaebed;
+        background-image: none;
+    }
+    .meals {
+        width: 90%;
+        height: auto;
+    }
+    .meals-content {
+        flex-basis: 100%;
+        margin-bottom: 3rem;
+    }
+    img.meals-img {
+        display: block;
+    }
+    a.meals-button {
+        padding: .5rem 1rem;
+        font-size: 1.7rem;
+        border-radius: 1.7rem;
+        width: 14rem;
+    }
+    .creditos {
+        flex-direction: column;
+        padding: 3rem 0;
+    }
+    .autores {
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 0;
+    }
+
+    /** Exercises */
+
+    section.exercises-banner-section {
+        background-position: 64rem 0;
+    }
+
+    .exercises-banner {
+        width: 90%;
+    }
+    h1.exercises-title {
+        flex-basis: 85%;
+    }
+
+    .exercises-routine-container {
+        height: auto;
+        padding: 5rem 0;
+    }
+
+    img.img-day {
+        width: 17rem;
+    }
+
+    /* Meals landing */
+
+    section.meals-banner-section{
+    background-position: 84rem 0;
+    }
+
+    .meals-banner {
+        width: 90%;
+    }
+
+    .meals-days-container{
+
+        height: auto;
+        padding: 5rem 0;
+    }
+
+    /** formulario y acceso */
+
+    section.form-banner-section {
+        height: 17rem;
+        background-position: 47rem 0;
+    }
+
+    .form-container {
+        width: 90%;
+        padding: 3rem 0;
+    }
+
+    .text-form {
+        text-shadow: none;
+        text-align: center;
+    }
+
+}
+.footer {
+  height: var( --height-footer );
+  padding-top: 7rem;
+}
+

@@ -1,0 +1,15 @@
+[{
+    "tittle": "Fitness4All ya está aquí",
+    "description": "El hogar de los más fuertes",
+    "img": "http://localhost:4200/assets/image/fitness-for-all-banner-register.png"
+},
+{
+    "tittle": "holi",
+    "description": "nuevo objeto",
+    "img": "http://localhost:4200/assets/image/fitness-for-all-banner-register.png"
+},
+{
+    "tittle": "holi3",
+    "description": "nuevo objeto 3",
+    "img": "http://localhost:4200/assets/image/fitness-for-all-banner-register.png"
+}]

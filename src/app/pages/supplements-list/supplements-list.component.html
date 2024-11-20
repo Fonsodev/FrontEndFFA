@@ -1,0 +1,43 @@
+<div class="containerSupplements">
+  <ul class="supplementsList">
+      @for (item of supplements; track $index) {
+          <li class="supplementsListItem">
+              <div class="card">
+                  <img class="imgItem" [src]="item.urlImage" [alt]="item.name">
+                  <div class="supplementsInfo">
+                      <div class="itemName">
+                          <h4>{{item.name}}</h4>
+                      </div>
+                      <div class="itemDescription">
+                          <p class="description">{{item.description }}</p>
+                      </div>
+                      <div class="containerInf">
+                          <div class="itemQuantity">
+                              <h4>Stock:</h4>
+                              <p class="quantity">&nbsp;{{ item.quantity }}</p>
+                          </div>
+                          <div class="itemPrice">
+                              <h4>Precio:</h4>
+                              <p class="price">&nbsp;{{item.price | currency : 'USD' : 'symbol' : '1.0-0'}}</p>
+                          </div>
+
+                          <ul class="editDelete">
+                              <li class="contEdit" (click)="editar(item._id)">
+                                  <img class="editIco" src="assets/image/editIcon.svg" alt="Icono de editar">&nbsp;&nbsp;
+                                  <a (click)="editar(item._id)" class="editButtom">
+                                      Editar
+                                  </a>
+                              </li>
+                              <li class="contDelete" (click)="eliminar(item._id)">
+                                  <img class="deleteIco" src="assets/image/deleteIcon.svg" alt="Icono de eliminar">&nbsp;&nbsp;
+                                  <a (click)="eliminar(item._id)" class="deleteButtom">
+                                      Eliminar
+                                  </a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </li>
+      }
+  </ul>

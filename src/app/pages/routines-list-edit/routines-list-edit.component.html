@@ -1,0 +1,157 @@
+<section class="contenedor form-container">
+  <h1 class="text-form">Actualizar Formulario de Rutinas</h1>
+  <form [formGroup]="formData" (ngSubmit)="handleSubmit()">
+    <label for="image"> Imagen </label>
+    <input type="" placeholder="image" id="image" formControlName="image" />
+    <div class="error">
+      @if( formData.get( 'image' )?.invalid && (formData.get( 'image' )?.dirty
+      || formData.get('image')?.touched)){ @if ( formData.get( 'image'
+      )?.errors?.[ 'required' ] ) {
+      <small>El campo 'imagen' es obligatorio</small>
+      } }
+    </div>
+    <label for="name"> * Nombre de la rutina</label>
+    <input type="text" placeholder="name" formControlName="name" id="name" />
+    <div class="error">
+      @if( formData.get( 'name' )?.invalid && ( formData.get( 'name' )?.dirty ||
+      formData.get( 'name' )?.touched )) { @if ( formData.get( 'name'
+      )?.errors?.[ 'required' ] ) {
+      <small>El campo 'name' es obligatorio</small>
+      } }
+    </div>
+
+    <label for="repeticionesfuerza">* RepetitionsStrength </label>
+    <input
+      type="number"
+      min="0"
+      placeholder="repeticionesfuerza"
+      id="repeticionesfuerza"
+      formControlName="repetitionsStrength"
+    />
+    <div class="error">
+      @if( formData.get( 'repeticionesfuerza' )?.invalid && ( formData.get(
+      'repeticionesfuerza' )?.dirty || formData.get( 'repeticionesfuerza'
+      )?.touched )) { @if ( formData.get( 'repeticionesfuerza' )?.errors?.[
+      'required' ] ) {
+      <small>El campo 'promedio' es obligatorio</small>
+      } }
+    </div>
+
+    <label for="promediofuerza">* AverageSetsStrength </label>
+    <input
+      type="number"
+      min="0"
+      placeholder="promediofuerza"
+      id="promediofuerza"
+      formControlName="averageSetsStrength"
+    />
+    <div class="error">
+      @if( formData.get( 'promediofuerza' )?.invalid && ( formData.get(
+      'promediofuerza' )?.dirty || formData.get( 'promediofuerza' )?.touched ))
+      { @if ( formData.get( 'promediofuerza' )?.errors?.[ 'required' ] ) {
+      <small>El campo 'promedio' es obligatorio</small>
+      } }
+    </div>
+
+    <label for="repeticionesresistencia">* RepetitionsEndurance </label>
+    <input
+      type="number"
+      min="0"
+      placeholder="repeticionesresistencia"
+      id="repeticionesresistencia"
+      formControlName="repetitionsEndurance"
+    />
+    <div class="error">
+      @if( formData.get( 'repeticionesresistencia' )?.invalid && ( formData.get(
+      'repeticionesresistencia' )?.dirty || formData.get(
+      'repeticionesresistencia' )?.touched )) { @if ( formData.get(
+      'repeticionesresistencia' )?.errors?.[ 'required' ] ) {
+      <small>El campo 'resistencia' es obligatorio</small>
+      } }
+    </div>
+
+    <label for="promedioresistencia">* AverageSetsEndurance </label>
+    <input
+      type="number"
+      min="0"
+      placeholder="promedioresistencia"
+      id="promedioresistencia"
+      formControlName="averageSetsEndurance"
+    />
+    <div class="error">
+      @if( formData.get( 'promedioresistencia' )?.invalid && ( formData.get(
+      'promedioresistencia' )?.dirty || formData.get( 'promedioresistencia'
+      )?.touched )) { @if ( formData.get( 'promedioresistencia' )?.errors?.[
+      'required' ] ) {
+      <small>El campo 'resistencia' es obligatorio</small>
+      } }
+    </div>
+
+    <label for="repeticioneshipertorfia">* RepetitionsHypertrophy </label>
+    <input
+      type="number"
+      min="0"
+      placeholder="repeticioneshipertorfia"
+      id="repeticioneshipertorfia"
+      formControlName="repetitionsHypertrophy"
+    />
+    <div class="error">
+      @if( formData.get( 'repeticioneshipertorfia' )?.invalid && ( formData.get(
+      'repeticioneshipertorfia' )?.dirty || formData.get(
+      'repeticioneshipertorfia' )?.touched )) { @if ( formData.get(
+      'repeticioneshipertorfia' )?.errors?.[ 'required' ] ) {
+      <small>El campo 'hipertrofía' es obligatorio</small>
+      } }
+    </div>
+
+    <label for="promediohipertorfia">* AverageSetstHypertrophy </label>
+    <input
+      type="number"
+      min="0"
+      placeholder="promediohipertorfia"
+      id="promediohipertorfia"
+      formControlName="averageSetstHypertrophy"
+    />
+    <div class="error">
+      @if( formData.get( 'promediohipertorfia' )?.invalid && ( formData.get(
+      'promediohipertorfia' )?.dirty || formData.get( 'promediohipertorfia'
+      )?.touched )) { @if ( formData.get( 'promediohipertorfia' )?.errors?.[
+      'required' ] ) {
+      <small>El campo 'hipertrofía' es obligatorio</small>
+      } }
+    </div>
+
+    <label for="description"> * Descripción</label>
+    <input
+      type="text"
+      placeholder="description"
+      formControlName="description"
+      id="description"
+    />
+    <div class="error">
+      @if( formData.get( 'description' )?.invalid && ( formData.get(
+      'description' )?.dirty || formData.get( 'description' )?.touched )) { @if
+      ( formData.get( 'description' )?.errors?.[ 'required' ] ) {
+      <small>El campo 'description' es obligatorio</small>
+      } }
+    </div>
+
+    <label for="muscleGroup"> * Grupo Muscular</label>
+    <input
+      type="text"
+      placeholder="grupomuscular"
+      formControlName="muscleGroup"
+      id="muscleGroup"
+    />
+    <div class="error">
+      @if( formData.get( 'grupomuscular' )?.invalid && ( formData.get(
+      'grupomuscular' )?.dirty || formData.get( 'grupomuscular' )?.touched )) {
+      @if ( formData.get( 'grupomuscular' )?.errors?.[ 'required' ] ) {
+      <small>El campo 'grupo muscular' es obligatorio</small>
+      } }
+    </div>
+    <p>*Campos obligatorios</p>
+    <br />
+    <button type="submit" [disabled]="formData.invalid">Actualizar</button>
+  </form>
+</section>

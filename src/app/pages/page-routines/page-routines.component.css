@@ -1,0 +1,7 @@
+.contenedor.exercises-routine-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: start;
+  align-items: center;
+}

@@ -1,0 +1,115 @@
+.exercises-section {
+  padding: 5rem 0;
+}
+
+.leftHome, .rightHome {
+  padding: 1rem;
+}
+
+.ejerciciosHome, .alimentacionHome {
+  display: flex;
+  align-items: center;
+  padding: .7rem .7rem .7rem 5rem;
+  margin: 2rem auto;
+  background-color: var(--Dark-Gunmetal--);
+  border-radius: 2.5rem;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+img.imgHomeMobile {
+  display: none;
+}
+
+.tienda {
+  display: flex;
+  flex-direction: column;
+  height: 93.1%;
+  align-items: center;
+  padding: 2.3rem 5rem;
+  margin: 2rem auto;
+  background-color: var(--Dark-Gunmetal--);
+  border-radius: 2.5rem;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  justify-content: space-between;
+}
+
+.ir-ahora {
+  text-decoration: none;
+  color: var(--limerick--);
+  border: .2rem solid #A4C400;
+  padding: .8rem 3.7rem;
+  border-radius: 2rem;
+  font-size: medium;
+}
+
+/* Estilos para pantallas móviles */
+@media (max-width: 768px) {
+  .exercises-section {
+      padding: 3rem 0;
+  }
+
+  .leftHome, .rightHome {
+      padding: 0.5rem;
+  }
+
+  .ejerciciosHome, .alimentacionHome {
+      flex-direction: column-reverse;
+      padding: 1rem 1rem 2rem 1rem;
+      text-align: center;
+  }
+
+  img.imgHomeDesktop {
+      display: none;
+  }
+
+  img.imgHomeMobile {
+      display: block;
+      width: 100%;
+  }
+
+  /* .tienda {
+      padding: 1.5rem 2rem;
+  } */
+
+  h2.subtittle {
+      text-align: center;
+  }
+  img.imgShop {
+      width: 100%;
+  }
+
+  .parrafoHome {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  p.parrafoShop {
+      text-align: center;
+  }
+
+  .ir-ahora {
+      padding: 0.8rem 2rem;
+      font-size: small;
+  }
+}
+
+@media (max-width: 480px) {
+  .ejerciciosHome, .alimentacionHome {
+      padding: 1rem 1rem 2rem 1rem;
+      margin-top: 3rem;
+      border-radius: 1rem;
+      flex-direction: column-reverse;
+  }
+
+  .tienda {
+      margin-top: 0;
+      padding: 1rem 1rem 2rem 1rem;
+      border-radius: 1rem;
+      flex-direction: column;
+  }
+
+  .ir-ahora {
+      padding: 0.6rem 1.5rem;
+      font-size: large;
+  }
+}

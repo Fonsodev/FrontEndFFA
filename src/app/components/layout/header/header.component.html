@@ -1,0 +1,242 @@
+<header class="header">
+  <div class="contenedor contenedor-header">
+    <div class="logo-container">
+      <a [routerLink]="['/home']" routerLinkActive="active">
+        <img src="assets/image/f4a-logo.svg" alt="F4A">
+      </a>
+    </div>
+    <nav>
+      <ul class="main-nav">
+        @if(!userData) {
+          <li>
+            <a class="anchor-link" [routerLink]="['dashboard/exercises']" routerLinkActive="active">
+              Rutinas
+            </a>
+          </li>
+          <li>
+            <a class="anchor-link" [routerLink]="['dashboard/meals']" routerLinkActive="active">
+              Alimentación
+            </a>
+          </li>
+          <li>
+            <a class="anchor-link" [routerLink]="['dashboard/supplements']" routerLinkActive="active">
+              Suplementación
+            </a>
+          </li>
+        }
+
+        @if(userData) {
+          <li class="dropdown">
+            <a class="anchor-link" [routerLink]="['page-routines']" routerLinkActive="active">
+              Rutinas
+            </a>
+            <ul class="submenu">
+              <li>
+                <a class="anchor-link" [routerLink]="['dashboard/exercises']" routerLinkActive="active">
+                  Formulario de Rutinas
+                </a>
+                <a class="anchor-link" [routerLink]="['dashboard/exercises-list']" routerLinkActive="active">
+                  Lista de Rutinas
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="anchor-link" [routerLink]="['page-meals']" routerLinkActive="active">
+              Alimentación
+            </a>
+            <ul class="submenu">
+              <li>
+                <a class="anchor-link" [routerLink]="['dashboard/meals']" routerLinkActive="active">
+                  Formulario de Alimentación
+                </a>
+                <a class="anchor-link" [routerLink]="['dashboard/meals-list']" routerLinkActive="active">
+                  Lista de alimentacion
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="anchor-link" [routerLink]="['page-supplements']" routerLinkActive="active">
+              Suplementación
+            </a>
+            <ul class="submenu">
+              <li>
+                <a class="anchor-link" [routerLink]="['dashboard/supplements']" routerLinkActive="active">
+                  Formulario de Suplementación
+                </a>
+                <a class="anchor-link" [routerLink]="['dashboard/supplements-list']" routerLinkActive="active">
+                  Lista de Suplementación
+
+                </a>
+              </li>
+            </ul>
+          </li>
+        }
+      </ul>
+    </nav>
+    <div class="buttons">
+      @if(!userData) {
+      <div>
+        <a class="inscribirse-link" [routerLink]="['/register']" routerLinkActive="active">
+          Registrarme
+        </a>
+      </div>
+      <div>
+        <a class="login-link" [routerLink]="['/login']" routerLinkActive="active">
+          Acceder
+        </a>
+      </div>
+      }
+      @if(userData){
+      <div>
+        <span class="login-link" (click)="logout()">
+          Cerrar sesion
+        </span>
+      </div>
+      }
+    </div>
+    <nav class="menu-container">
+      <!-- Checkbox para controlar el menú -->
+      <label for="menu-toggle" class="menu-icon">
+        <img src="assets/image/hamburguer-menu.svg" alt="menu-icon" class="hamburger-icon">
+      </label>
+      <input type="checkbox" id="menu-toggle">
+      <!-- Menú -->
+      <ul class="menu">
+        @if (!userData) {
+          <li>
+            <a class="anchor-link" [routerLink]="['dashboard/exercises']" routerLinkActive="active">
+              Rutinas
+            </a>
+          </li>
+          <li>
+            <a class="anchor-link" [routerLink]="['dashboard/meals']" routerLinkActive="active">
+              Alimentación
+            </a>
+          </li>
+          <li>
+            <a class="anchor-link" [routerLink]="['dashboard/supplements']" routerLinkActive="active">
+              Suplementación
+            </a>
+          </li>
+        }
+        <!-- @if(userData) {
+          <li class="dropdown">
+            <a class="anchor-link" [routerLink]="['dashboard/exercises']" routerLinkActive="active">
+              Rutinas
+            </a>
+            <ul class="submenu">
+              <li>
+                <a class="anchor-link" [routerLink]="['dashboard/routines-list']" routerLinkActive="active">
+                  Lista de Rutinas
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="anchor-link" [routerLink]="['dashboard/meals']" routerLinkActive="active">
+              Alimentación
+            </a>
+            <ul class="submenu">
+              <li>
+                <a class="anchor-link" [routerLink]="['dashboard/meals-list']" routerLinkActive="active">
+                  Lista de alimentacion
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="anchor-link" [routerLink]="['dashboard/supplements']" routerLinkActive="active">
+              Suplementación
+            </a>
+            <ul class="submenu">
+              <li>
+                <a class="anchor-link" [routerLink]="['dashboard/supplements-list']" routerLinkActive="active">
+                  Lista de Suplementación
+                </a>
+              </li>
+            </ul>
+          </li>
+        } -->
+        @if(userData) {
+          <li class="dropdown">
+            <a class="anchor-link" [routerLink]="['page-routines']" routerLinkActive="active">
+              Rutinas
+            </a>
+            <ul class="submenu">
+              <li>
+                <a class="anchor-link" [routerLink]="['dashboard/exercises']" routerLinkActive="active">
+                  Formulario de Rutinas
+                </a>
+                <a class="anchor-link" [routerLink]="['dashboard/exercises-list']" routerLinkActive="active">
+                  Lista de Rutinas
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="anchor-link" [routerLink]="['page-meals']" routerLinkActive="active">
+              Alimentación
+            </a>
+            <ul class="submenu">
+              <li>
+                <a class="anchor-link" [routerLink]="['dashboard/meals']" routerLinkActive="active">
+                  Formulario de Alimentación
+                </a>
+                <a class="anchor-link" [routerLink]="['dashboard/meals-list']" routerLinkActive="active">
+                  Lista de alimentacion
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="anchor-link" [routerLink]="['page-supplements']" routerLinkActive="active">
+              Suplementación
+            </a>
+            <ul class="submenu">
+              <li>
+                <a class="anchor-link" [routerLink]="['dashboard/supplements']" routerLinkActive="active">
+                  Formulario de Suplementación
+                </a>
+                <a class="anchor-link" [routerLink]="['dashboard/supplements-list']" routerLinkActive="active">
+                  Lista de Suplementación
+                </a>
+              </li>
+            </ul>
+          </li>
+        }
+
+
+        @if(!userData) {
+        <li>
+          <a [routerLink]="['/register']" routerLinkActive="active">
+            Registrarme
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/login']" routerLinkActive="active">
+            Acceder
+          </a>
+        </li>
+        }
+        @if(userData){
+        <li>
+          <span class="anchor-link" (click)="logout()">
+            Cerrar sesion
+          </span>
+        </li>
+        }
+      </ul>
+
+
+    </nav>
+  </div>
+</header>
+@if (userData) {
+  <!-- <pre>{{|json}}</pre> -->
+   <div class="containerHello">
+      <span class="userHello"> Hola {{userData.name}}</span>
+   </div>
+
+  }

@@ -1,0 +1,56 @@
+<div class="containerRoutines">
+    <ul class="routinesList">
+        @for (item of routines; track $index) {
+            <li class="routineListItem">
+                <div class="card">
+                    <img class="imgItem" [src]="item.image" [alt]="item.name">
+                    <div class="exerciseInfo">
+                        <div class="itemName">
+                            <h4>{{item.name}}</h4>
+                        </div>
+                        <div class="itemDescription">
+                            <p class="description">{{item.description }}</p>
+                        </div>
+                        <div class="containerInf">
+                            <div class="itemMuscleGroup">
+                                <h4>Grupo muscular:</h4>
+                                <p class="muscleGroup">&nbsp;{{ item.muscleGroup }}</p>
+                            </div>
+                            <div class="itemStrength">
+                                <h4>Repeticiones para fuerza:</h4>
+                                <p class="repetitions">&nbsp;{{item.repetitionsStrength}}</p>
+                            </div>
+                            <div class="itemEndurance">
+                                <h4>Repeticiones para resistencia:</h4>
+                                <p class="repetitions">&nbsp;{{item.repetitionsEndurance}}</p>
+                            </div>
+                            <div class="itemHypertrophy">
+                                <h4>Repeticiones para aumento muscular:</h4>
+                                <p class="repetitions">&nbsp;{{item.repetitionsHypertrophy}}</p>
+                            </div>
+                            <div class="itemSets">
+                                <h4>Series:</h4>
+                                <p class="sets">&nbsp;{{item.averageSetstHypertrophy}}</p>
+                            </div>
+
+                            <ul class="editDelete">
+                                <li class="contEdit" (click)="editar(item._id)">
+                                    <img class="editIco" src="assets/image/editIcon.svg" alt="Icono de editar">&nbsp;&nbsp;
+                                    <a (click)="editar(item._id)" class="editButtom">
+                                        Editar
+                                    </a>
+                                </li>
+                                <li class="contDelete" (click)="eliminar(item._id)">
+                                    <img class="deleteIco" src="assets/image/deleteIcon.svg" alt="Icono de eliminar">&nbsp;&nbsp;
+                                    <a (click)="eliminar(item._id)" class="deleteButtom">
+                                        Eliminar
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+</div>
